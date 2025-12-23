@@ -1,65 +1,125 @@
-import Image from "next/image";
+"use client";
 
-export default function Home() {
+import { useEffect } from "react";
+import gsap from "gsap";
+import Draggable from "gsap/Draggable";
+
+import nature from "@/public/images/nature2.jpg";
+import Bin from "@/public/images/recyclebin.png";
+import file from "@/public/images/file.png";
+import { motion } from "framer-motion";
+const Page = () => {
+  useEffect(() => {
+    gsap.registerPlugin(Draggable);
+
+    // draggable code
+    Draggable.create(".icon", {
+      type: "x,y",
+      edgeResistance: 0.9,
+      bounds: window,
+      inertia: true,
+    });
+  }, []);
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+    <div className="relative">
+      {/* background  image*/}
+      <img src={nature.src} alt="window" className="h-screen w-full fixed" />
+
+      {/* portfolio heading */}
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1 }}
+        whileHover={{
+          scale: 1.05,
+          rotate: 1,
+          boxShadow: "0px 0px 30px rgba(255, 255, 0, 0.4)",
+        }}
+        className="absolute top-80 left-1/2 -translate-x-1/2 flex flex-col items-center text-center cursor-pointer"
+      >
+        <motion.h1
+          className="text-gray-200 text-xl tracking-wide"
+          whileHover={{ scale: 1.1 }}
+          transition={{ type: "spring", stiffness: 150 }}
+        >
+          Hey, I&apos;m Amit! Welcome to my
+        </motion.h1>
+
+        <motion.h1
+          className="text-7xl font-extrabold flex items-center gap-2"
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1, delay: 0.3 }}
+        >
+          <span className="text-white">Port</span>
+
+          <motion.span
+            className="text-yellow-300 font-bold bg-gradient-to-r from-yellow-300 to-orange-400 bg-clip-text text-transparent"
+            whileHover={{
+              scale: 1.2,
+              y: -5,
+              textShadow: "0 0 15px rgba(255, 200, 0, 0.8)",
+            }}
+            transition={{ type: "spring", stiffness: 200 }}
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
+            folio
+          </motion.span>
+        </motion.h1>
+      </motion.div>
+
+      {/* portfolio */}
+      <div className="icon absolute top-6 left-4 flex items-center flex-col cursor-pointer">
+        <img src={file.src} alt="file" className="w-10" />
+        <h1 className="text-white font-bold text-center">Portfolio</h1>
+      </div>
+
+      {/* learning folder */}
+      <div className="icon absolute top-26 left-4 flex items-center flex-col cursor-pointer">
+        <img src={file.src} alt="file" className="w-10" />
+        <h1 className="text-white font-bold flex flex-col items-center text-center">
+          Learning
+          <span>Folder</span>
+        </h1>
+      </div>
+
+      {/* next.js folder */}
+      <div className="icon absolute top-26 right-4 flex items-center flex-col cursor-pointer">
+        <img src={file.src} alt="file" className="w-10" />
+        <h1 className="text-white font-bold flex flex-col items-center text-center">
+          Next.js
+          <span>Folder</span>
+        </h1>
+      </div>
+
+      {/* react folder */}
+      <div className="icon absolute top-51 right-4 flex items-center flex-col cursor-pointer">
+        <img src={file.src} alt="file" className="w-10" />
+        <h1 className="text-white font-bold flex flex-col items-center text-center">
+          React
+          <span>Folder</span>
+        </h1>
+      </div>
+
+      {/* javascript folder */}
+      <div className="icon absolute top-76 left-4 flex items-center flex-col cursor-pointer">
+        <img src={file.src} alt="file" className="w-10" />
+        <h1 className="text-white font-bold flex flex-col items-center text-center">
+          Javascript
+          <span>Folder</span>
+        </h1>
+      </div>
+
+      {/* recycle bin */}
+      <div className="icon absolute top-101 left-6 flex items-center flex-col cursor-pointer">
+        <img src={Bin.src} alt="file" className="w-13" />
+        <h1 className="text-white font-bold flex flex-col items-center text-center">
+          Recycle
+          <span>Bin</span>
+        </h1>
+      </div>
     </div>
   );
-}
+};
+
+export default Page;
