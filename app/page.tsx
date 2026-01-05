@@ -83,22 +83,34 @@ const Page = () => {
         </h1>
       </div>
 
-      {/* next.js folder */}
-      <div className="icon absolute top-26 right-4 flex items-center flex-col cursor-pointer ">
+      {/*ecommerce folder ecommerce project open */}
+      <div
+        className="icon absolute top-26 right-4 flex items-center flex-col cursor-pointer "
+        onClick={() =>
+          window.open(
+            "https://shopping-app-omega-six.vercel.app/",
+            "_blank",
+            "noopener,noreferrer"
+          )
+        }
+      >
         <img src={file.src} alt="file" className="w-10" />
-        <h1 className="text-white font-bold flex flex-col items-center text-center">
-          Next.js
-          <span>Folder</span>
-        </h1>
+        <h1 className="text-white font-bold  text-center">Ecommerce</h1>
       </div>
 
-      {/* react folder */}
-      <div className="icon absolute top-51 right-4 flex items-center flex-col cursor-pointer ">
+      {/* whatsapp folder watsapp project open  */}
+      <div
+        className="icon absolute top-46 right-4 flex items-center flex-col cursor-pointer "
+        onClick={() =>
+          window.open(
+            "https://whatsapp-one-lake.vercel.app/",
+            "_blank",
+            "noopener,noreferrer"
+          )
+        }
+      >
         <img src={file.src} alt="file" className="w-10" />
-        <h1 className="text-white font-bold flex flex-col items-center text-center">
-          React
-          <span>Folder</span>
-        </h1>
+        <h1 className="text-white font-bold  text-center">WhatsApp</h1>
       </div>
 
       {/* javascript folder */}

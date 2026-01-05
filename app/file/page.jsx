@@ -177,10 +177,10 @@ const page = () => {
           </button>
           <button className="flex items-center gap-4 px-3 py-2 rounded hover:bg-gray-700 text-sm">
             <FolderClosed size={17} />
-            Next.js Folder
+            Ecommerce
           </button>
           <button className="flex items-center gap-4 px-3 py-2 rounded hover:bg-gray-700 text-sm mb-6">
-            <FolderClosed size={17} /> React Folder
+            <FolderClosed size={17} /> WhatsApp
           </button>
           <div className="pt-6 flex flex-col border-t border-[#2b2b2b]">
             <button className="flex items-center gap-4 px-3 py-2 rounded hover:bg-gray-700 text-sm  ">
