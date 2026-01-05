@@ -69,7 +69,7 @@ const Page = () => {
       </motion.div>
 
       {/* portfolio */}
-      <div className="icon absolute top-6 left-4 flex items-center flex-col cursor-pointer">
+      <div className="icon absolute top-6 left-4 flex items-center flex-col cursor-pointer ">
         <img src={file.src} alt="file" className="w-10" />
         <h1 className="text-white font-bold text-center">Portfolio</h1>
       </div>
@@ -84,7 +84,7 @@ const Page = () => {
       </div>
 
       {/* next.js folder */}
-      <div className="icon absolute top-26 right-4 flex items-center flex-col cursor-pointer">
+      <div className="icon absolute top-26 right-4 flex items-center flex-col cursor-pointer ">
         <img src={file.src} alt="file" className="w-10" />
         <h1 className="text-white font-bold flex flex-col items-center text-center">
           Next.js
@@ -93,7 +93,7 @@ const Page = () => {
       </div>
 
       {/* react folder */}
-      <div className="icon absolute top-51 right-4 flex items-center flex-col cursor-pointer">
+      <div className="icon absolute top-51 right-4 flex items-center flex-col cursor-pointer ">
         <img src={file.src} alt="file" className="w-10" />
         <h1 className="text-white font-bold flex flex-col items-center text-center">
           React

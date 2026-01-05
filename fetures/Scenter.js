@@ -10,7 +10,7 @@ import "tippy.js/dist/tippy.css";
 import Window from "@/public/images/window.png";
 import notes from "@/public/images/notes.png";
 import file from "@/public/images/file.png";
-import resume from "@/public/images/sky.jpg";
+import resume from "@/public/images/resume.png";
 import chrome from "@/public/images/chrome.png";
 import terminal from "@/public/images/terminal.png";
 import copilot from "@/public/images/copilot.png";
@@ -141,7 +141,7 @@ const Scenter = () => {
               selected === "notes" ? "border-b-5 border-blue-500" : ""
             }`}
           >
-            <Image src={notes.src} alt="notes" width={21} height={21} />
+            <Image src={resume.src} alt="notes" width={26} height={26} />
           </button>
         </Tippy>
 
@@ -177,7 +177,7 @@ const Scenter = () => {
               selected === "resume" ? "border-b-5 border-blue-500" : ""
             }`}
           >
-            <Image src={resume.src} alt="resume" width={26} height={26} />
+            <Image src={notes.src} alt="resume" width={23} height={23} />
           </button>
         </Tippy>
       </div>
