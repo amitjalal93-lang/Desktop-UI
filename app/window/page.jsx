@@ -1,3 +1,5 @@
+"use client";
+
 import Tippy from "@tippyjs/react";
 import { Search, ChevronRight, Power } from "lucide-react";
 import React from "react";
