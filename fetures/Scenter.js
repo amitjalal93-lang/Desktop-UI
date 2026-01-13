@@ -27,7 +27,7 @@ import TerminalApp from "@/app/terminal/page.jsx";
 import CopilotApp from "@/app/copilot/page.jsx";
 import WindowApp from "@/app/window/page.jsx";
 import SearchApp from "@/app/resume/page.jsx";
-import Resume from "@/app/resume/ResumeClient.jsx";
+import Resume from "@/app/resume/page.jsx";
 
 const Scenter = () => {
   const [selected, setSelected] = useState("");
